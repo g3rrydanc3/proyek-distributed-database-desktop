@@ -87,5 +87,10 @@ namespace proyek_distributed_database_desktop
                 MessageBox.Show("Username & password tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

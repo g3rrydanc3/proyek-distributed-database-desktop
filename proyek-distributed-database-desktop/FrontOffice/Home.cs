@@ -16,5 +16,32 @@ namespace proyek_distributed_database_desktop.FrontOffice
         {
             InitializeComponent();
         }
+
+        private void guestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        Reservation r;
+        private void reservationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(r == null)
+            {
+                r = new Reservation();
+                r.MdiParent = this;
+                r.FormClosed += new FormClosedEventHandler(r_closed);
+                r.Show();
+            }
+            else
+            {
+                r.Activate();
+            }
+
+        }
+
+        public void r_closed(object sender, EventArgs e)
+        {
+            r = null;
+        }
     }
 }
