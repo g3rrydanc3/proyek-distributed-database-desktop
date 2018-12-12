@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace proyek_distributed_database_desktop.Laundry
 {
-    public partial class Home : Form
+    public partial class MasterLaundryService : Form
     {
-        public Home()
+        public MasterLaundryService()
         {
             InitializeComponent();
         }

@@ -63,6 +63,18 @@
     <Compile Include="FrontOffice\Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laundry\Forms\MasterLaundryService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laundry\Forms\MasterLaundryService.Designer.cs">
+      <DependentUpon>MasterLaundryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laundry\Forms\NewLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laundry\Forms\NewLaundry.Designer.cs">
+      <DependentUpon>NewLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,10 +97,10 @@
     <Compile Include="FrontOffice\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laundry\Home.cs">
+    <Compile Include="Laundry\Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laundry\Home.Designer.cs">
+    <Compile Include="Laundry\Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -110,6 +122,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrontOffice\Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laundry\Forms\MasterLaundryService.resx">
+      <DependentUpon>MasterLaundryService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laundry\Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laundry\Forms\NewLaundry.resx">
+      <DependentUpon>NewLaundry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
