@@ -105,6 +105,12 @@
     <Compile Include="Restaurant\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="TravelAgent\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TravelAgent\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="TravelAgent\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
       <DependentUpon>RoomType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Restaurant\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TravelAgent\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TravelAgent\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Config.ini">
