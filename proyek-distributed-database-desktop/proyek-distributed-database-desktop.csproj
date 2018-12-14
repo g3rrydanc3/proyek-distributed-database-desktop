@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrontOffice\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontOffice\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOffice\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontOffice\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrontOffice\Guests.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +74,18 @@
     </Compile>
     <Compile Include="FrontOffice\Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOffice\Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontOffice\Rooms.Designer.cs">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrontOffice\RoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontOffice\RoomType.Designer.cs">
+      <DependentUpon>RoomType.cs</DependentUpon>
     </Compile>
     <Compile Include="Laundry\Forms\MasterLaundryService.cs">
       <SubType>Form</SubType>
@@ -87,6 +111,21 @@
     <Compile Include="TravelAgent\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrontOffice\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontOffice\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontOffice\Guests.resx">
+      <DependentUpon>Guests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontOffice\Rooms.resx">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontOffice\RoomType.resx">
+      <DependentUpon>RoomType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Restaurant\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
