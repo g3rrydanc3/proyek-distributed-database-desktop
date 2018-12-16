@@ -157,6 +157,7 @@ namespace proyek_distributed_database_desktop.TravelAgent
             this.Controls.Add(this.comboBox1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
