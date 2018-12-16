@@ -1,3 +1,4 @@
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,11 @@ namespace proyek_distributed_database_desktop.TravelAgent
 {
 	public partial class Dashboard : Form
 	{
+		OracleConnection conn;
 		public Dashboard()
 		{
 			InitializeComponent();
+			
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -32,6 +35,16 @@ namespace proyek_distributed_database_desktop.TravelAgent
 			ru.MdiParent = Home.ActiveForm;
 			this.Hide();
 			ru.Show();
+		}
+
+		private void Dashboard_Load(object sender, EventArgs e)
+		{
+			conn.Open();
+			OracleDataAdapter da = new OracleDataAdapter("Select * from travelagent", conn);
+			conn.Close();
+			conn.Open();
+			OracleDataAdapter da = new OracleDataAdapter("Insert * from travelagent", conn);
+			conn.Close();
 		}
 	}
 }
