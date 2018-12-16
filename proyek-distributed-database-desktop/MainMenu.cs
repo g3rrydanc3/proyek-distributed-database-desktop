@@ -52,5 +52,10 @@ namespace proyek_distributed_database_desktop
         {
 
         }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

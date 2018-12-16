@@ -1,4 +1,3 @@
-using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace proyek_distributed_database_desktop.TravelAgent
 {
@@ -17,7 +17,7 @@ namespace proyek_distributed_database_desktop.TravelAgent
 		public Dashboard()
 		{
 			InitializeComponent();
-			
+            conn = new OracleConnection(Login.connectionString);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -43,8 +43,15 @@ namespace proyek_distributed_database_desktop.TravelAgent
 			OracleDataAdapter da = new OracleDataAdapter("Select * from travelagent", conn);
 			conn.Close();
 			conn.Open();
-			OracleDataAdapter da = new OracleDataAdapter("Insert * from travelagent", conn);
+			OracleDataAdapter da2 = new OracleDataAdapter("Insert * from travelagent", conn);
 			conn.Close();
 		}
+
+        private void load_cbRoomType()
+        {
+            conn.Open();
+            OracleDataAdapter da = new OracleDataAdapter("Select * from travelagent", conn);
+            conn.Close();
+        }
 	}
 }

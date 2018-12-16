@@ -136,6 +136,12 @@ namespace proyek_distributed_database_desktop.FrontOffice
             
         }
 
-        
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainMenu m = new MainMenu();
+            m.Closed += (s, args) => this.Close();
+            this.Dispose();
+            m.Show();
+        }
     }
 }

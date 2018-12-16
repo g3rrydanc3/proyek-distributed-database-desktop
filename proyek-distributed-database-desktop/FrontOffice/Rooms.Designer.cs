@@ -66,6 +66,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Room Type";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -229,6 +230,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Rooms";
             this.Text = "Rooms";
+            this.Load += new System.EventHandler(this.Rooms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

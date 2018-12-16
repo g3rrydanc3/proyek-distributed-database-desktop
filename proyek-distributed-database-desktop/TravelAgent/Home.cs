@@ -19,14 +19,23 @@ namespace proyek_distributed_database_desktop.TravelAgent
             InitializeComponent();
 			f = new Dashboard();
 			f.MdiParent = this;
-			f.Show();
+            f.FormClosed += new FormClosedEventHandler(home_closed);
+            f.Show();
         }
 
 		private void homeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			f = new Dashboard();
-			f.MdiParent = this;
-			f.Show();
+            if (f == null)
+            {
+                f = new Dashboard();
+                f.MdiParent = this;
+                f.FormClosed += new FormClosedEventHandler(home_closed);
+                f.Show();
+            }
+            else
+            {
+                f.Activate();
+            }
 		}
 
 		private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,8 +43,18 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 			m = new MainMenu();
 			m.Closed += (s, args) => this.Close();
-			this.Hide();
+			this.Dispose();
 			m.Show();
 		}
-	}
+
+        public void home_closed(object sender, EventArgs e)
+        {
+            f = null;
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

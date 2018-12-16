@@ -219,6 +219,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Guests";
             this.Text = "Guets";
+            this.Load += new System.EventHandler(this.Guests_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

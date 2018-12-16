@@ -216,6 +216,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "RoomType";
             this.Text = "RoomType";
+            this.Load += new System.EventHandler(this.RoomType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
