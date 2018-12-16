@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace proyek_distributed_database_desktop.FrontOffice
 {
     public partial class Home : Form
     {
         Dashboard d;
+        String uname, upass;
         public Home()
         {
             InitializeComponent();
+
+            string oradb = "Data Source=FRONTOFFICE;User Id=" + uname + ";Password=" + upass + ";";
+            OracleConnection conn = new OracleConnection(oradb); // C#
+            conn.Open();
 
             d = new Dashboard();
             d.MdiParent = this;
@@ -126,6 +132,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
         public void d_closed(object sender, EventArgs e)
         {
             d = null;
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

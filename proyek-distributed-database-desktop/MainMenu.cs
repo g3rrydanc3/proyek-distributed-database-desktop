@@ -47,5 +47,10 @@ namespace proyek_distributed_database_desktop
         {
             openForm(Forms.TravelAgent);
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
