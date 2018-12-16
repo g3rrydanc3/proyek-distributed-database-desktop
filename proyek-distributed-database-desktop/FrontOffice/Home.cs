@@ -14,9 +14,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
     public partial class Home : Form
     {
         Dashboard d;
+        OracleConnection conn;
         public Home()
         {
             InitializeComponent();
+            conn = new OracleConnection(Login.connectionString);
 
             d = new Dashboard();
             d.MdiParent = this;
@@ -133,5 +135,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
         {
             
         }
+
+        
     }
 }

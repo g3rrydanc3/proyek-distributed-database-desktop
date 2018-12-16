@@ -17,6 +17,7 @@ namespace proyek_distributed_database_desktop
     {
         OracleConnection conn;
         Forms forms;
+        public static string connectionString;
         public Login(Forms forms)
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace proyek_distributed_database_desktop
             {
                 var parser = new FileIniDataParser();
                 IniData data = parser.ReadFile("Config.ini");
-                string connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
+                connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
                 conn = new OracleConnection(connectionString);
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
