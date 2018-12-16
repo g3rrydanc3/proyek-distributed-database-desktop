@@ -21,23 +21,27 @@ namespace proyek_distributed_database_desktop
         {
             InitializeComponent();
             this.forms = forms;
-            createConnection();
+            //createConnection();
         }
 
-        private void createConnection()
+        private void createConnection(String username, String password)
         {
             try
             {
                 var parser = new FileIniDataParser();
                 IniData data = parser.ReadFile("Config.ini");
-                string connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + data[forms.ToString()]["username"] + ";Password=" + data[forms.ToString()]["password"];
-                //conn = new OracleConnection(connectionString);
-                //conn.Open();
+                string connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
+                conn = new OracleConnection(connectionString);
+                conn.Open();
+                if (conn.State == ConnectionState.Open)
+                {
+                    openForms(this.forms);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw ex;
+                //throw ex;
             }
         }
 
@@ -79,8 +83,9 @@ namespace proyek_distributed_database_desktop
             {
                 textBox1.Text = textBox1.Text.Trim();
                 textBox2.Text = textBox2.Text.TrimStart().TrimEnd();
+                createConnection(textBox1.Text, textBox2.Text);
+                //conn.Open();
                 
-                openForms(this.forms);
             }
             else
             {

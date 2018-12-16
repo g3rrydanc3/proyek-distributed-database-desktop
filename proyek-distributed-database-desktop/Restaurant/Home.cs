@@ -16,5 +16,6 @@ namespace proyek_distributed_database_desktop.Restaurant
         {
             InitializeComponent();
         }
+
     }
 }
