@@ -24,5 +24,14 @@ namespace proyek_distributed_database_desktop.TravelAgent
 				dateTimePicker2.Value.ToLongDateString() + " - " +
 				numericUpDown1.Value.ToString());
 		}
+
+		RegisterUser ru;
+		private void button2_Click(object sender, EventArgs e)
+		{
+			ru = new RegisterUser();
+			ru.MdiParent = Home.ActiveForm;
+			this.Hide();
+			ru.Show();
+		}
 	}
 }
