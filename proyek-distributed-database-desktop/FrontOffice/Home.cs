@@ -14,14 +14,9 @@ namespace proyek_distributed_database_desktop.FrontOffice
     public partial class Home : Form
     {
         Dashboard d;
-        String uname, upass;
         public Home()
         {
             InitializeComponent();
-
-            string oradb = "Data Source=FRONTOFFICE;User Id=" + uname + ";Password=" + upass + ";";
-            OracleConnection conn = new OracleConnection(oradb); // C#
-            conn.Open();
 
             d = new Dashboard();
             d.MdiParent = this;
