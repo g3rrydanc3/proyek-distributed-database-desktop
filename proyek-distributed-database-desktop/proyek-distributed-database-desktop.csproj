@@ -99,11 +99,29 @@
     <Compile Include="Laundry\Forms\NewLaundry.Designer.cs">
       <DependentUpon>NewLaundry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Restaurant\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restaurant\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restaurant\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant\Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Restaurant\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\ListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restaurant\ListProduct.Designer.cs">
+      <DependentUpon>ListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Rupiah.cs" />
     <Compile Include="TravelAgent\Dashboard.cs">
@@ -138,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrontOffice\RoomType.resx">
       <DependentUpon>RoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurant\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurant\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Restaurant\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
