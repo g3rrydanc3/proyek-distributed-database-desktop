@@ -12,6 +12,7 @@ namespace proyek_distributed_database_desktop.Laundry
 {
     public partial class Home : Form
     {
+        MainMenu m;
         public Home()
         {
             InitializeComponent();
@@ -56,6 +57,14 @@ namespace proyek_distributed_database_desktop.Laundry
             {
                 masterLaundryServiceForm.Activate();
             }
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m = new MainMenu();
+            m.Closed += (s, args) => this.Close();
+            this.Dispose();
+            m.Show();
         }
     }
 }
