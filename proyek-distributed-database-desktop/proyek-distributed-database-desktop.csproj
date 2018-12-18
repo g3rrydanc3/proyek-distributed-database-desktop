@@ -105,6 +105,7 @@
     <Compile Include="Restaurant\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rupiah.cs" />
     <Compile Include="TravelAgent\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
