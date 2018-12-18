@@ -99,10 +99,10 @@
     <Compile Include="Laundry\Forms\NewLaundry.Designer.cs">
       <DependentUpon>NewLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Restaurant\AddCustomer.cs">
+    <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Restaurant\AddCustomer.Designer.cs">
+    <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Restaurant\Dashboard.cs">
@@ -157,7 +157,7 @@
     <EmbeddedResource Include="FrontOffice\RoomType.resx">
       <DependentUpon>RoomType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Restaurant\AddCustomer.resx">
+    <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Restaurant\Dashboard.resx">
