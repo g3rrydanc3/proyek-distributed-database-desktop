@@ -33,13 +33,19 @@ namespace proyek_distributed_database_desktop.FrontOffice
             cbRole.Items.Add("KASIR");
             cbRole.SelectedIndex = 0;
 
+            cbDatabase.Items.Add("FRONTOFFICE");
+            cbDatabase.Items.Add("LAUNDRY");
+            cbDatabase.Items.Add("RESTAURANT");
+            cbDatabase.Items.Add("TRAVELAGENT");
+            cbDatabase.SelectedIndex = 0;
+
             load_employee();
         }
 
         private void load_employee()
         {
             conn.Open();
-            OracleDataAdapter adap = new OracleDataAdapter("select * from employee", conn);
+            OracleDataAdapter adap = new OracleDataAdapter("select * from employee where status = 1", conn);
             DataTable dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -59,16 +65,19 @@ namespace proyek_distributed_database_desktop.FrontOffice
             //string uname = txtUser.Text;
             string upass = txtPass.Text;
             string urole = cbRole.SelectedItem.ToString();
+            string database = cbDatabase.SelectedItem.ToString();
 
             if (fname != null && lname != null){ 
                 try
                 {
                     command.CommandText =
-                        "INSERT INTO employee (first_name, last_name, password, role) values (:fname,:lname,:pass,:urole)";
+                        "INSERT INTO employee (first_name, last_name, password, role, database, status) values (:fname,:lname,:pass,:urole,:database,:status)";
                     command.Parameters.Add("fname", fname);
                     command.Parameters.Add("lname", lname);
                     command.Parameters.Add("pass", upass);
                     command.Parameters.Add("urole", urole);
+                    command.Parameters.Add("database", database);
+                    command.Parameters.Add("status", 1);
                     command.ExecuteNonQuery();
                     trans.Commit();
                     MessageBox.Show("Please tell user to change password after log in");
@@ -107,11 +116,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
                 try
                 {
                     command.CommandText =
-                        "UPDATE employee set first_name = :fname, last_name = :lname, password = :password where employee_id :id";
-                    command.Parameters.Add("fname", fname);
-                    command.Parameters.Add("lname", lname);
-                    command.Parameters.Add("pass", upass);
-                    command.Parameters.Add("employee_id", id);
+                       "UPDATE employee set first_name = :fname, last_name = :lname, password = :password where employee_id = :id";
+                    command.Parameters.Add(":fname", fname);
+                    command.Parameters.Add(":lname", lname);
+                    command.Parameters.Add(":password", upass);
+                    command.Parameters.Add(":id", id);
                     command.ExecuteNonQuery();
                     trans.Commit();
                     MessageBox.Show("Success Updated");
@@ -142,10 +151,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
             try
             {
                 command.CommandText =
-                    "DELETE employee WHERE employee_id = :employee_id ";
+                    "UPDATE employee SET status = 0 WHERE employee_id = :employee_id ";
                 command.Parameters.Add("employee_id", id);
                 command.ExecuteNonQuery();
                 trans.Commit();
+                MessageBox.Show("Success Deleted");
                 Console.WriteLine("Deleted.");
             }
             catch (Exception ex)
@@ -161,14 +171,20 @@ namespace proyek_distributed_database_desktop.FrontOffice
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idx = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[idx];
 
-            txtID.Text = dataGridView1.Rows[idx].Cells[0].Value.ToString();
-            txtFirst.Text = dataGridView1.Rows[idx].Cells[1].Value.ToString();
-            txtLast.Text = dataGridView1.Rows[idx].Cells[2].Value.ToString();
-            txtUser.Text = dataGridView1.Rows[idx].Cells[3].Value.ToString();
-            txtPass.Text = dataGridView1.Rows[idx].Cells[4].Value.ToString();
-            cbRole.SelectedItem = dataGridView1.Rows[idx].Cells[5].Value.ToString();
+            txtID.Text = row.Cells[0].Value.ToString();
+            txtFirst.Text = row.Cells[1].Value.ToString();
+            txtLast.Text = row.Cells[2].Value.ToString();
+            txtUser.Text = row.Cells[3].Value.ToString();
+            txtPass.Text = row.Cells[4].Value.ToString();
+            cbRole.SelectedItem = row.Cells[5].Value.ToString();
+            cbDatabase.SelectedItem = row.Cells[6].Value.ToString();
         }
-        
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
