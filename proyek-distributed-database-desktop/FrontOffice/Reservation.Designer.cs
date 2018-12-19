@@ -243,6 +243,7 @@
             this.btnRoomType.TabIndex = 2;
             this.btnRoomType.Text = "Check Availbility";
             this.btnRoomType.UseVisualStyleBackColor = true;
+            this.btnRoomType.Click += new System.EventHandler(this.btnRoomType_Click);
             // 
             // cbRoomType
             // 
@@ -361,7 +362,7 @@
             // 
             this.btnGuests.Location = new System.Drawing.Point(9, 17);
             this.btnGuests.Name = "btnGuests";
-            this.btnGuests.Size = new System.Drawing.Size(101, 32);
+            this.btnGuests.Size = new System.Drawing.Size(77, 32);
             this.btnGuests.TabIndex = 8;
             this.btnGuests.Text = "List Guests";
             this.btnGuests.UseVisualStyleBackColor = true;
@@ -371,7 +372,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(116, 11);
+            this.label13.Location = new System.Drawing.Point(92, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 14);
             this.label13.TabIndex = 10;
@@ -381,9 +382,9 @@
             // 
             this.cbCustomerID.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCustomerID.FormattingEnabled = true;
-            this.cbCustomerID.Location = new System.Drawing.Point(117, 27);
+            this.cbCustomerID.Location = new System.Drawing.Point(92, 27);
             this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(100, 22);
+            this.cbCustomerID.Size = new System.Drawing.Size(125, 22);
             this.cbCustomerID.TabIndex = 8;
             // 
             // Reservation
@@ -420,13 +421,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRoomType;
-        private System.Windows.Forms.ComboBox cbRoomType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtCardNo;
         private System.Windows.Forms.Label label11;
@@ -443,5 +442,7 @@
         public System.Windows.Forms.RichTextBox rtxtAddress;
         public System.Windows.Forms.TextBox txtPhone;
         public System.Windows.Forms.ComboBox cbCustomerID;
+        public System.Windows.Forms.TextBox txtRoomNo;
+        public System.Windows.Forms.ComboBox cbRoomType;
     }
 }

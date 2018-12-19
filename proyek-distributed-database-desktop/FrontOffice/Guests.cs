@@ -32,7 +32,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             {
                 btnAddReservation.Enabled = true;
             }
-            rs = this.rs;
+            this.rs = rs;
         }
 
         private void Guests_Load(object sender, EventArgs e)

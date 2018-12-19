@@ -106,5 +106,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
             g.ShowDialog();
 
         }
+
+        private void btnRoomType_Click(object sender, EventArgs e)
+        {
+            Rooms r = new Rooms(true, this);
+            r.ShowDialog();
+        }
     }
 }
