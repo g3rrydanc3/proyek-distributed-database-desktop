@@ -15,6 +15,7 @@ namespace proyek_distributed_database_desktop.Restaurant
     public partial class Dashboard : Form
     {
         OracleConnection conn;
+        public static DataGridViewRow row;
         private class Item
         {
             public string Name;
@@ -97,9 +98,8 @@ namespace proyek_distributed_database_desktop.Restaurant
 
         private void menuList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.menuList.Rows[e.RowIndex];
+            row = this.menuList.Rows[e.RowIndex];
             AddMenu form = new AddMenu();
-            //AddMenu.menuName = row.Cells[1].Value.ToString();
             form.Show();
         }
     }
