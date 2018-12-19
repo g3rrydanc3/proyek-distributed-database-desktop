@@ -166,7 +166,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             rs.txtPhone.Text = row.Cells[4].Value.ToString();
             //Reservation r = new Reservation(fname);
             //r.Show();
-            //this.Dispose();
+            this.Dispose();
         }
     }
 }

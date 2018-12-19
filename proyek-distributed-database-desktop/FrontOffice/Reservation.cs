@@ -152,9 +152,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
                     OracleParameter dateNow = new OracleParameter();
                     dateNow.OracleDbType = OracleDbType.Date;
                     dateNow.Value = now;
-
-                    //MessageBox.Show(Rupiah.ToAngka(lblPrice.Text.ToString()).ToString());
-
+                    
                     command.CommandText = 
                          "INSERT INTO service (room_no, service_type, service_date, total) values (:roomno, :servicetype, :servicedate, :total)";
                     command.Parameters.Add(":roomno", roomno);
@@ -164,38 +162,56 @@ namespace proyek_distributed_database_desktop.FrontOffice
                     command.ExecuteNonQuery();
                     trans.Commit();
 
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
-                         "INSERT INTO bill (room_no, employee_id, customer_id, total) values (:roomno, :servicetype, :servicedate, :total)";
-                    command.Parameters.Add(":roomno", roomno);
-                    command.Parameters.Add(":employeeid", "AC001");
+                         "INSERT INTO bill (employee_id, customer_id, total) values (:employeeid, :customerid, :total)";
+                    command.Parameters.Add(":employeeid", "EM001");
                     command.Parameters.Add(":customerid", custid);
                     command.Parameters.Add(":total", Rupiah.ToAngka(lblPrice.Text.ToString()).ToString());
                     command.ExecuteNonQuery();
                     trans.Commit();
 
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
-                         "select max(to_number(substr(bill_id, 7, 4))) from bill";
+                         "select bill_id from bill where substr(bill_id, 7, 4) = (select max(to_number(substr(bill_id, 7, 4))) from bill)";
                     string billid = command.ExecuteScalar().ToString();
                     trans.Commit();
-                    
+
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
                          "INSERT INTO payment (bill_id, payment_date, payment_method, card_no) values (:billid, :paymentdate, :paymentmethod, :cardno)";
                     command.Parameters.Add(":billid", billid);
-                    command.Parameters.Add(":paymentdate", dateCheckPayment);
+                    command.Parameters.Add(dateCheckPayment);
                     command.Parameters.Add(":paymentmethod", method);
                     command.Parameters.Add(":cardno", cardno);
                     command.ExecuteNonQuery();
                     trans.Commit();
 
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
-                         "select max(substr(payment_id, 8, 3)) from payment";
+                         "select payment_id from payment where substr(payment_id, 8, 3) = (select max(substr(payment_id, 8, 3)) from payment)";
                     string paymentid = command.ExecuteScalar().ToString();
                     trans.Commit();
+
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
-                         "select max(substr(service_id, 8, 3)) from service";
+                         "select service_id from service where substr(service_id, 8, 3) = (select max(substr(service_id, 8, 3)) from service)";
                     string serviceid = command.ExecuteScalar().ToString();
                     trans.Commit();
 
+                    command = conn.CreateCommand();
+                    trans = conn.BeginTransaction(IsolationLevel.Serializable);
+                    command.Transaction = trans;
                     command.CommandText =
                          "INSERT INTO bill_detail (payment_id, service_id) values (:paymentid, :serviceid)";
                     command.Parameters.Add(":paymentid", paymentid);

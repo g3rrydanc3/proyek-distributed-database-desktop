@@ -15,6 +15,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
     {
         Dashboard d;
         OracleConnection conn;
+        public static string employee_id;
         public Home()
         {
             InitializeComponent();

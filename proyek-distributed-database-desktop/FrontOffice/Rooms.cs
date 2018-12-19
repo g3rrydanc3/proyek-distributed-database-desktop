@@ -113,6 +113,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             rs.cbRoomType.SelectedItem = row.Cells[1].Value.ToString();
             rs.txtRoomNo.Text = row.Cells[0].Value.ToString();
             rs.lblPrice.Text = Rupiah.ToRupiah(Convert.ToInt32(row.Cells[3].Value));
+            this.Dispose();
         }
     }
 }

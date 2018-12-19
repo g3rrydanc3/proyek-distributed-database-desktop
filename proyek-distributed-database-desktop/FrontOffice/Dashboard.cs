@@ -16,5 +16,10 @@ namespace proyek_distributed_database_desktop.FrontOffice
         {
             InitializeComponent();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
