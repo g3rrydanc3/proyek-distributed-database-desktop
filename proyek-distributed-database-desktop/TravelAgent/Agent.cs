@@ -35,10 +35,15 @@ namespace proyek_distributed_database_desktop.TravelAgent
 			conn.Open();
 			OracleDataAdapter adap = new OracleDataAdapter("insert into agent (name) values ('"+textBox1.Text+"')", conn);
 			DataTable dt = new DataTable();
-			dataGridView1.Update();
-			dataGridView1.Refresh();
 			adap.Fill(dt);
 			dataGridView1.DataSource = dt;
+			conn.Close();
+
+			conn.Open();
+			OracleDataAdapter adap2 = new OracleDataAdapter("select * from agent", conn);
+			DataTable dt2 = new DataTable();
+			adap2.Fill(dt2);
+			dataGridView1.DataSource = dt2;
 			conn.Close();
 		}
 	}

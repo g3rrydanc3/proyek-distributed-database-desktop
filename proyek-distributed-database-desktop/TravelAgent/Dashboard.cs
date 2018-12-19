@@ -26,17 +26,11 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			listBox1.Items.Add(comboBox1.SelectedItem + " - " +
+				listBox1.Items.Add(comboBox1.SelectedItem + " - " +
 				dateTimePicker1.Value.ToLongDateString() + " - " +
 				dateTimePicker2.Value.ToLongDateString() + " - " +
 				numericUpDown1.Value.ToString());
-			//isi[ctr] = comboBox1.SelectedItem + " - " +
-				//dateTimePicker1.Value.ToLongDateString() + " - " +
-				//dateTimePicker2.Value.ToLongDateString() + " - " +
-				//numericUpDown1.Value.ToString();
-			///isi = listBox1.Items;
-			
-			//ctr++;
+						
 		}
 
 		RegisterUser ru;

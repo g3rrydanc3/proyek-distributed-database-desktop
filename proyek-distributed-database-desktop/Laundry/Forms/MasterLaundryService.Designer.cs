@@ -110,13 +110,13 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxServiceType, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownPrice, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(286, 113);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(286, 118);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // label1
@@ -125,16 +125,16 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 37);
+            this.label1.Size = new System.Drawing.Size(137, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Service Type";
             // 
             // buttonAddEdit
             // 
             this.buttonAddEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddEdit.Location = new System.Drawing.Point(146, 77);
+            this.buttonAddEdit.Location = new System.Drawing.Point(146, 81);
             this.buttonAddEdit.Name = "buttonAddEdit";
-            this.buttonAddEdit.Size = new System.Drawing.Size(137, 33);
+            this.buttonAddEdit.Size = new System.Drawing.Size(137, 34);
             this.buttonAddEdit.TabIndex = 5;
             this.buttonAddEdit.Text = "Add";
             this.buttonAddEdit.UseVisualStyleBackColor = true;
@@ -144,18 +144,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 37);
+            this.label2.Location = new System.Drawing.Point(3, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 37);
+            this.label2.Size = new System.Drawing.Size(137, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Price";
             // 
             // buttonCancel
             // 
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCancel.Location = new System.Drawing.Point(3, 77);
+            this.buttonCancel.Location = new System.Drawing.Point(3, 81);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(137, 33);
+            this.buttonCancel.Size = new System.Drawing.Size(137, 34);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -166,27 +166,27 @@
             this.textBoxServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxServiceType.Location = new System.Drawing.Point(146, 3);
             this.textBoxServiceType.Name = "textBoxServiceType";
-            this.textBoxServiceType.Size = new System.Drawing.Size(137, 34);
+            this.textBoxServiceType.Size = new System.Drawing.Size(137, 29);
             this.textBoxServiceType.TabIndex = 1;
             // 
             // numericUpDownPrice
             // 
             this.numericUpDownPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(146, 40);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(146, 42);
             this.numericUpDownPrice.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.numericUpDownPrice.Name = "numericUpDownPrice";
-            this.numericUpDownPrice.Size = new System.Drawing.Size(137, 34);
+            this.numericUpDownPrice.Size = new System.Drawing.Size(137, 29);
             this.numericUpDownPrice.TabIndex = 6;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(427, 31);
+            this.groupBox1.Location = new System.Drawing.Point(427, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(292, 146);
             this.groupBox1.TabIndex = 3;
@@ -199,7 +199,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(427, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(292, 28);
+            this.label3.Size = new System.Drawing.Size(292, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Double Click to Edit";
             // 
@@ -226,7 +226,7 @@
             // 
             // MasterLaundryService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 455);
             this.Controls.Add(this.tableLayoutPanel2);

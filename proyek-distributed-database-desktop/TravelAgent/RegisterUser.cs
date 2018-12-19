@@ -60,5 +60,23 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 
 		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			conn.Open();
+			OracleCommand command = new OracleCommand("SELECT * FROM CUSTOMER@keFrontOffice WHERE customer_id = "+textBox1.Text + "')", conn);
+			int rowsInsert = command.ExecuteNonQuery();
+			OracleDataReader isi = command.ExecuteReader();
+			conn.Close();
+			if (rowsInsert == 0)//kalau kembar
+			{
+				textBox1.Text = isi.GetValue(0).ToString();
+				MessageBox.Show("User Sudah Terdaftar");
+			}
+			else
+			{
+				MessageBox.Show("User Belum Terdaftar");
+			}
+		}
 	}
 }
