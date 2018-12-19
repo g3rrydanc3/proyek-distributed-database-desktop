@@ -143,42 +143,63 @@ namespace proyek_distributed_database_desktop.Restaurant
 
         private void payment_Click(object sender, EventArgs e)
         {
-            //String id;
-            //if (roomNo.SelectedItem.ToString() == "walk-in-client")
-            //{
-            //    id = "0";
-            //}else
-            //{
-            //    id = roomNo.SelectedItem.ToString();
-            //}
-            //conn.Open();
-            //String now = DateTime.Now.ToString("DDMMYYYY");
-            ////MessageBox.Show(now);
-            //OracleCommand command = new OracleCommand("INSERT INTO MENU_BILL(EMPLOYEE_ID, ROOM_NO, TABLE_NO, TOTAL, BILL_DATE) VALUES('EM001', " + id+ ", " + tableNo.Text + ", 0, to_date(to_char('" + now + "', 'DD-MM-YYYY')))", conn);
-            //int rowsInsert = command.ExecuteNonQuery();
-            //conn.Close();
-            //if (rowsInsert == 0)
-            //{
-            //    MessageBox.Show("Record not inserted");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Success! Bill has been created");
-            //    this.Close();
-            //}
+            int tableNoInt = -1;
+            if(!Int32.TryParse(tableNo.Text, out tableNoInt)){
+                MessageBox.Show("Table No number only.");
+                throw new Exception();
+            }
+
+            String roomNoString;
+            if (roomNo.SelectedItem.ToString() == "walk-in-client")
+            {
+                roomNoString = "0";
+            }
+            else
+            {
+                roomNoString = roomNo.SelectedItem.ToString();
+            }
+            conn.Open();
+            DateTime now = DateTime.Now;
+
+            OracleParameter dateParam = new OracleParameter();
+            dateParam.OracleDbType = OracleDbType.Date;
+            dateParam.Value = now;
+
+            OracleCommand command = new OracleCommand("INSERT INTO MENU_BILL(EMPLOYEE_ID, ROOM_NO, TABLE_NO, TOTAL, BILL_DATE) VALUES(:a1, :a2, :a3, :a4, :a5)", conn);
+            command.Parameters.Add("a1", "EM001");
+            command.Parameters.Add("a2", roomNoString);
+            command.Parameters.Add("a3", tableNoInt);
+            command.Parameters.Add("a4", "0");
+            command.Parameters.Add(dateParam);
+            int rowsInsert = command.ExecuteNonQuery();
+            conn.Close();
+            if (rowsInsert == 0)
+            {
+                MessageBox.Show("Record not inserted");
+            }
+            else
+            {
+                MessageBox.Show("Success! Bill has been created");
+                this.Close();
+            }
         }
 
         private void tableNo_Leave(object sender, EventArgs e)
         {
-            tableNo.ForeColor = Color.Gray;
-            tableNo.Text = "Table No Note";
-            tableNo.Select(tableNo.TextLength, 0);
+            if (tableNo.Text == "")
+            {
+                tableNo.Text = "Table No";
+                tableNo.ForeColor = Color.Gray;
+            }
         }
 
-        private void tableNo_Click(object sender, EventArgs e)
+        private void tableNo_Enter(object sender, EventArgs e)
         {
-            tableNo.Clear();
-            tableNo.ForeColor = Color.Black;
+            if (tableNo.Text == "Table No")
+            {
+                tableNo.ForeColor = Color.Black;
+                tableNo.Text = "";
+            }
         }
     }
 }
