@@ -19,7 +19,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
         public Employees()
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.connectionString);
+            conn = new OracleConnection(Login.newconnectionString);
         }
 
         private void label4_Click(object sender, EventArgs e)

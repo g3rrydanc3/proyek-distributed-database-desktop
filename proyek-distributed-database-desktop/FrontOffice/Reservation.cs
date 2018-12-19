@@ -167,7 +167,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
                     command.Transaction = trans;
                     command.CommandText =
                          "INSERT INTO bill (employee_id, customer_id, total) values (:employeeid, :customerid, :total)";
-                    command.Parameters.Add(":employeeid", Home.employee_id);
+                    command.Parameters.Add(":employeeid", Login.employee_loginid);
                     command.Parameters.Add(":customerid", custid);
                     command.Parameters.Add(":total", Rupiah.ToAngka(lblPrice.Text.ToString()).ToString());
                     command.ExecuteNonQuery();

@@ -14,12 +14,11 @@ namespace proyek_distributed_database_desktop.FrontOffice
     public partial class Home : Form
     {
         Dashboard d;
-        OracleConnection conn;
-        public static string employee_id;
+        //OracleConnection conn;
         public Home()
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.connectionString);
+            //conn = new OracleConnection(Login.newconnectionString);
             d = new Dashboard();
             d.MdiParent = this;
             d.FormClosed += new FormClosedEventHandler(d_closed);
@@ -133,7 +132,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
 
         private void Home_Load(object sender, EventArgs e)
         {
-            /*if (Login.username_login == "adminfrontoffice" && Login.password_login == "admin")
+            if (Login.username_login == "adminfrontoffice" && Login.password_login == "admin")
             {
                 Login.employee_loginid = "ADMIN";
                 lblFirstName.Text = "Hello, "+Login.employee_loginid.ToString();
@@ -141,7 +140,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             else
             {
                 lblFirstName.Text = "Hello, " + Login.first_name.ToString();
-            }*/
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

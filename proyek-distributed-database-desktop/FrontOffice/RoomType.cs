@@ -19,7 +19,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
         public RoomType()
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.connectionString);
+            conn = new OracleConnection(Login.newconnectionString);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

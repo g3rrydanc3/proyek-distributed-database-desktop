@@ -39,6 +39,7 @@ namespace proyek_distributed_database_desktop
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
                 {
+                    database_login = data[forms.ToString()]["datasource"];
                     OracleCommand command = conn.CreateCommand();
                     if (forms == Forms.FrontOffice)
                     {
@@ -60,11 +61,10 @@ namespace proyek_distributed_database_desktop
                         database_login = read.GetString(2);
                         first_name = read.GetString(3);
                     }
-                    conn.Close();
                     newconnectionString = "Data source=" + database_login + ";User ID=" + username_login + ";Password=" + password_login;
-                    openForms(this.forms);
-                    
                 }
+                conn.Close();
+                openForms(this.forms);
             }
             catch (Exception ex)
             {
