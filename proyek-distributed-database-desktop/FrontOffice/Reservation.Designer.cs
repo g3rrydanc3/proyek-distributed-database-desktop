@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbGuest = new System.Windows.Forms.GroupBox();
+            this.cbCustomerID = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnGuests = new System.Windows.Forms.Button();
             this.rtxtAddress = new System.Windows.Forms.RichTextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,9 +40,9 @@
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtFname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.gbRoom = new System.Windows.Forms.GroupBox();
+            this.dtCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.dtCheckIn = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRoomNo = new System.Windows.Forms.TextBox();
@@ -47,43 +50,69 @@
             this.btnRoomType = new System.Windows.Forms.Button();
             this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbPayment = new System.Windows.Forms.GroupBox();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtPayment = new System.Windows.Forms.DateTimePicker();
             this.cbMethod = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnGuests = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbCustomerID = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbGuest.SuspendLayout();
+            this.gbRoom.SuspendLayout();
+            this.gbPayment.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbGuest
             // 
-            this.groupBox1.Controls.Add(this.cbCustomerID);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.btnGuests);
-            this.groupBox1.Controls.Add(this.rtxtAddress);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtLname);
-            this.groupBox1.Controls.Add(this.txtFname);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 253);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Guest Information";
+            this.gbGuest.Controls.Add(this.cbCustomerID);
+            this.gbGuest.Controls.Add(this.label13);
+            this.gbGuest.Controls.Add(this.btnGuests);
+            this.gbGuest.Controls.Add(this.rtxtAddress);
+            this.gbGuest.Controls.Add(this.txtPhone);
+            this.gbGuest.Controls.Add(this.label4);
+            this.gbGuest.Controls.Add(this.label3);
+            this.gbGuest.Controls.Add(this.label2);
+            this.gbGuest.Controls.Add(this.txtLname);
+            this.gbGuest.Controls.Add(this.txtFname);
+            this.gbGuest.Controls.Add(this.label1);
+            this.gbGuest.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbGuest.Location = new System.Drawing.Point(12, 46);
+            this.gbGuest.Name = "gbGuest";
+            this.gbGuest.Size = new System.Drawing.Size(248, 253);
+            this.gbGuest.TabIndex = 0;
+            this.gbGuest.TabStop = false;
+            this.gbGuest.Text = "Guest Information";
+            // 
+            // cbCustomerID
+            // 
+            this.cbCustomerID.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCustomerID.FormattingEnabled = true;
+            this.cbCustomerID.Location = new System.Drawing.Point(92, 27);
+            this.cbCustomerID.Name = "cbCustomerID";
+            this.cbCustomerID.Size = new System.Drawing.Size(125, 22);
+            this.cbCustomerID.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(92, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 14);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Customer ID";
+            // 
+            // btnGuests
+            // 
+            this.btnGuests.Location = new System.Drawing.Point(9, 17);
+            this.btnGuests.Name = "btnGuests";
+            this.btnGuests.Size = new System.Drawing.Size(77, 32);
+            this.btnGuests.TabIndex = 8;
+            this.btnGuests.Text = "List Guests";
+            this.btnGuests.UseVisualStyleBackColor = true;
+            this.btnGuests.Click += new System.EventHandler(this.btnGuests_Click);
             // 
             // rtxtAddress
             // 
@@ -159,40 +188,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
-            // groupBox2
+            // gbRoom
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtRoomNo);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.btnRoomType);
-            this.groupBox2.Controls.Add(this.cbRoomType);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(281, 46);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(260, 253);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Room";
+            this.gbRoom.Controls.Add(this.dtCheckOut);
+            this.gbRoom.Controls.Add(this.dtCheckIn);
+            this.gbRoom.Controls.Add(this.label8);
+            this.gbRoom.Controls.Add(this.label7);
+            this.gbRoom.Controls.Add(this.txtRoomNo);
+            this.gbRoom.Controls.Add(this.label6);
+            this.gbRoom.Controls.Add(this.btnRoomType);
+            this.gbRoom.Controls.Add(this.cbRoomType);
+            this.gbRoom.Controls.Add(this.label5);
+            this.gbRoom.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRoom.Location = new System.Drawing.Point(281, 46);
+            this.gbRoom.Name = "gbRoom";
+            this.gbRoom.Size = new System.Drawing.Size(260, 253);
+            this.gbRoom.TabIndex = 1;
+            this.gbRoom.TabStop = false;
+            this.gbRoom.Text = "Room";
             // 
-            // dateTimePicker2
+            // dtCheckOut
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(12, 171);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(232, 21);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dtCheckOut.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckOut.Location = new System.Drawing.Point(12, 171);
+            this.dtCheckOut.Name = "dtCheckOut";
+            this.dtCheckOut.Size = new System.Drawing.Size(232, 21);
+            this.dtCheckOut.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dtCheckIn
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 130);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 21);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtCheckIn.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckIn.Location = new System.Drawing.Point(12, 130);
+            this.dtCheckIn.Name = "dtCheckIn";
+            this.dtCheckIn.Size = new System.Drawing.Size(232, 21);
+            this.dtCheckIn.TabIndex = 6;
             // 
             // label8
             // 
@@ -266,21 +295,21 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Room Type";
             // 
-            // groupBox3
+            // gbPayment
             // 
-            this.groupBox3.Controls.Add(this.txtCardNo);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.dateTimePicker3);
-            this.groupBox3.Controls.Add(this.cbMethod);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(561, 47);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(227, 252);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Payment";
+            this.gbPayment.Controls.Add(this.txtCardNo);
+            this.gbPayment.Controls.Add(this.label11);
+            this.gbPayment.Controls.Add(this.label10);
+            this.gbPayment.Controls.Add(this.dtPayment);
+            this.gbPayment.Controls.Add(this.cbMethod);
+            this.gbPayment.Controls.Add(this.label9);
+            this.gbPayment.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPayment.Location = new System.Drawing.Point(561, 47);
+            this.gbPayment.Name = "gbPayment";
+            this.gbPayment.Size = new System.Drawing.Size(227, 252);
+            this.gbPayment.TabIndex = 2;
+            this.gbPayment.TabStop = false;
+            this.gbPayment.Text = "Payment";
             // 
             // txtCardNo
             // 
@@ -310,13 +339,13 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "Payment Date";
             // 
-            // dateTimePicker3
+            // dtPayment
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(9, 78);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 21);
-            this.dateTimePicker3.TabIndex = 5;
+            this.dtPayment.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPayment.Location = new System.Drawing.Point(9, 78);
+            this.dtPayment.Name = "dtPayment";
+            this.dtPayment.Size = new System.Drawing.Size(200, 21);
+            this.dtPayment.TabIndex = 5;
             // 
             // cbMethod
             // 
@@ -347,6 +376,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Finalize Bill";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label12
             // 
@@ -358,35 +388,6 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Reservation Form";
             // 
-            // btnGuests
-            // 
-            this.btnGuests.Location = new System.Drawing.Point(9, 17);
-            this.btnGuests.Name = "btnGuests";
-            this.btnGuests.Size = new System.Drawing.Size(77, 32);
-            this.btnGuests.TabIndex = 8;
-            this.btnGuests.Text = "List Guests";
-            this.btnGuests.UseVisualStyleBackColor = true;
-            this.btnGuests.Click += new System.EventHandler(this.btnGuests_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(92, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 14);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Customer ID";
-            // 
-            // cbCustomerID
-            // 
-            this.cbCustomerID.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCustomerID.FormattingEnabled = true;
-            this.cbCustomerID.Location = new System.Drawing.Point(92, 27);
-            this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(125, 22);
-            this.cbCustomerID.TabIndex = 8;
-            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,18 +395,18 @@
             this.ClientSize = new System.Drawing.Size(800, 355);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbPayment);
+            this.Controls.Add(this.gbRoom);
+            this.Controls.Add(this.gbGuest);
             this.Name = "Reservation";
             this.Text = "Reservation";
             this.Load += new System.EventHandler(this.Reservation_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbGuest.ResumeLayout(false);
+            this.gbGuest.PerformLayout();
+            this.gbRoom.ResumeLayout(false);
+            this.gbRoom.PerformLayout();
+            this.gbPayment.ResumeLayout(false);
+            this.gbPayment.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,24 +414,24 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbGuest;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbRoom;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRoomType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtCheckOut;
+        private System.Windows.Forms.DateTimePicker dtCheckIn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbPayment;
         private System.Windows.Forms.TextBox txtCardNo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtPayment;
         private System.Windows.Forms.ComboBox cbMethod;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;

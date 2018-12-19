@@ -112,5 +112,40 @@ namespace proyek_distributed_database_desktop.FrontOffice
             Rooms r = new Rooms(true, this);
             r.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to process this reservation?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                if(txtFname.Text != "" || txtLname.Text != "" || rtxtAddress.Text != "" || txtPhone.Text != "" || txtRoomNo.Text != "" || dtCheckOut.Value.Date > DateTime.Today || txtCardNo.Text != "")
+                {
+                    OracleParameter dateCheckIn = new OracleParameter();
+                    dateCheckIn.OracleDbType = OracleDbType.Date;
+                    dateCheckIn.Value = dtCheckIn.Value;
+
+                    OracleParameter dateCheckOut = new OracleParameter();
+                    dateCheckOut.OracleDbType = OracleDbType.Date;
+                    dateCheckOut.Value = dtCheckOut.Value;
+
+                    OracleParameter dateCheckPayment = new OracleParameter();
+                    dateCheckPayment.OracleDbType = OracleDbType.Date;
+                    dateCheckPayment.Value = dtPayment.Value;
+
+                    string custid = cbCustomerID.SelectedItem.ToString();
+                    string fname = txtFname.Text;
+                    string lname = txtLname.Text;
+                    string address = rtxtAddress.Text;
+                    string phone = txtPhone.Text;
+                    string roomtype = cbRoomType.SelectedItem.ToString();
+                    string roomno = txtRoomNo.Text;
+
+                }
+                else
+                {
+                    MessageBox.Show("Some field are empty");
+                }
+            }
+        }
     }
 }
