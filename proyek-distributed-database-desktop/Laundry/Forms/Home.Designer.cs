@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.newLaundryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editLaundryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterLaundryServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -42,7 +41,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newLaundryToolStripMenuItem,
-            this.editLaundryToolStripMenuItem,
             this.masterLaundryServiceToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -57,13 +55,6 @@
             this.newLaundryToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.newLaundryToolStripMenuItem.Text = "New Laundry";
             this.newLaundryToolStripMenuItem.Click += new System.EventHandler(this.newLaundryToolStripMenuItem_Click);
-            // 
-            // editLaundryToolStripMenuItem
-            // 
-            this.editLaundryToolStripMenuItem.Name = "editLaundryToolStripMenuItem";
-            this.editLaundryToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.editLaundryToolStripMenuItem.Text = "Edit Laundry";
-            this.editLaundryToolStripMenuItem.Click += new System.EventHandler(this.editLaundryToolStripMenuItem_Click);
             // 
             // masterLaundryServiceToolStripMenuItem
             // 
@@ -105,7 +96,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem newLaundryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editLaundryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem masterLaundryServiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }

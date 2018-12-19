@@ -119,8 +119,8 @@ namespace proyek_distributed_database_desktop.Laundry
         private void buttonSave_Click(object sender, EventArgs e)
         {
             String laundry_bill_id = insertLaundry();
-            MessageBox.Show(laundry_bill_id.ToString());
             insertLaundryDetail(laundry_bill_id);
+            MessageBox.Show(laundry_bill_id.ToString() + " inserted");
             reset();
         }
 
