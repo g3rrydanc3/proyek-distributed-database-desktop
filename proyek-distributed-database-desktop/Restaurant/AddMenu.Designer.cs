@@ -105,7 +105,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Location = new System.Drawing.Point(314, 112);
             this.button1.Name = "button1";
@@ -113,6 +113,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddMenu
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.menuName);
             this.Controls.Add(this.label1);
             this.Name = "AddMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Menu";
             this.Load += new System.EventHandler(this.AddMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qty)).EndInit();

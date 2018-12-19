@@ -28,36 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuList = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.payment = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.totalPayment = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.totalItem = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bill = new System.Windows.Forms.DataGridView();
             this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuName = new System.Windows.Forms.TextBox();
-            this.note = new System.Windows.Forms.TextBox();
+            this.tableNo = new System.Windows.Forms.TextBox();
             this.roomNo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.menuList)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bill)).BeginInit();
             this.SuspendLayout();
             // 
             // menuList
@@ -66,145 +63,111 @@
             this.menuList.AllowUserToDeleteRows = false;
             this.menuList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.menuList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.menuList.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.menuList.DefaultCellStyle = dataGridViewCellStyle5;
             this.menuList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.menuList.Location = new System.Drawing.Point(337, 28);
             this.menuList.Name = "menuList";
             this.menuList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.menuList.Size = new System.Drawing.Size(441, 394);
             this.menuList.TabIndex = 4;
-            this.menuList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.menuList_CellContentClick);
+            this.menuList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.menuList_CellDoubleClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.payment);
+            this.panel1.Controls.Add(this.cancel);
+            this.panel1.Controls.Add(this.delete);
+            this.panel1.Controls.Add(this.totalPayment);
+            this.panel1.Controls.Add(this.total);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.totalItem);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.bill);
             this.panel1.Controls.Add(this.menuName);
-            this.panel1.Controls.Add(this.note);
+            this.panel1.Controls.Add(this.tableNo);
             this.panel1.Controls.Add(this.roomNo);
             this.panel1.Location = new System.Drawing.Point(23, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(305, 394);
             this.panel1.TabIndex = 3;
             // 
-            // button6
+            // payment
             // 
-            this.button6.BackColor = System.Drawing.Color.Green;
-            this.button6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.button6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button6.Location = new System.Drawing.Point(180, 318);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(109, 70);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Payment";
-            this.button6.UseVisualStyleBackColor = false;
+            this.payment.BackColor = System.Drawing.Color.Green;
+            this.payment.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.payment.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.payment.Location = new System.Drawing.Point(129, 318);
+            this.payment.Name = "payment";
+            this.payment.Size = new System.Drawing.Size(160, 70);
+            this.payment.TabIndex = 19;
+            this.payment.Text = "Payment";
+            this.payment.UseVisualStyleBackColor = false;
+            this.payment.Click += new System.EventHandler(this.payment_Click);
             // 
-            // button5
+            // cancel
             // 
-            this.button5.BackColor = System.Drawing.Color.Navy;
-            this.button5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button5.Location = new System.Drawing.Point(99, 354);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 34);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Print Bill";
-            this.button5.UseVisualStyleBackColor = false;
+            this.cancel.BackColor = System.Drawing.Color.Red;
+            this.cancel.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.cancel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.cancel.Location = new System.Drawing.Point(18, 354);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(105, 34);
+            this.cancel.TabIndex = 16;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
-            // button4
+            // delete
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.button4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button4.Location = new System.Drawing.Point(99, 318);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 34);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Print Order";
-            this.button4.UseVisualStyleBackColor = false;
+            this.delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.delete.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.delete.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.delete.Location = new System.Drawing.Point(18, 318);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(105, 34);
+            this.delete.TabIndex = 15;
+            this.delete.Text = "Delete";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
-            // button3
+            // totalPayment
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.button3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Location = new System.Drawing.Point(18, 354);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 34);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.totalPayment.AutoSize = true;
+            this.totalPayment.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.totalPayment.Location = new System.Drawing.Point(243, 290);
+            this.totalPayment.Name = "totalPayment";
+            this.totalPayment.Size = new System.Drawing.Size(13, 14);
+            this.totalPayment.TabIndex = 14;
+            this.totalPayment.Text = "0";
             // 
-            // button2
+            // total
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(18, 318);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Hold";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label10.Location = new System.Drawing.Point(253, 288);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 14);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label9.Location = new System.Drawing.Point(254, 272);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 14);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label8.Location = new System.Drawing.Point(254, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 14);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "0";
+            this.total.AutoSize = true;
+            this.total.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.total.Location = new System.Drawing.Point(243, 254);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(13, 14);
+            this.total.TabIndex = 12;
+            this.total.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(168, 272);
+            this.label7.Location = new System.Drawing.Point(15, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 14);
             this.label7.TabIndex = 11;
@@ -226,29 +189,29 @@
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
             this.label5.Location = new System.Drawing.Point(110, 272);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 14);
+            this.label5.Size = new System.Drawing.Size(26, 14);
             this.label5.TabIndex = 9;
-            this.label5.Text = "0";
+            this.label5.Text = "10%";
             // 
-            // label4
+            // totalItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label4.Location = new System.Drawing.Point(110, 254);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 14);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "0";
+            this.totalItem.AutoSize = true;
+            this.totalItem.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.totalItem.Location = new System.Drawing.Point(110, 254);
+            this.totalItem.Name = "totalItem";
+            this.totalItem.Size = new System.Drawing.Size(13, 14);
+            this.totalItem.TabIndex = 8;
+            this.totalItem.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label3.Location = new System.Drawing.Point(15, 288);
+            this.label3.Location = new System.Drawing.Point(15, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 14);
+            this.label3.Size = new System.Drawing.Size(72, 14);
             this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
+            this.label3.Text = "Total Payable";
             // 
             // label2
             // 
@@ -257,9 +220,8 @@
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Location = new System.Drawing.Point(15, 271);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 14);
+            this.label2.Size = new System.Drawing.Size(0, 14);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Discount";
             // 
             // label1
             // 
@@ -271,27 +233,30 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Total Items";
             // 
-            // dataGridView1
+            // bill
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.product,
             this.price,
             this.qty,
             this.subtotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(274, 150);
-            this.dataGridView1.TabIndex = 4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bill.DefaultCellStyle = dataGridViewCellStyle6;
+            this.bill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.bill.Location = new System.Drawing.Point(15, 97);
+            this.bill.Name = "bill";
+            this.bill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bill.Size = new System.Drawing.Size(274, 150);
+            this.bill.TabIndex = 4;
+            this.bill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bill_CellClick);
             // 
             // product
             // 
@@ -333,17 +298,17 @@
             this.menuName.Click += new System.EventHandler(this.menuName_Click);
             this.menuName.Leave += new System.EventHandler(this.menuName_Leave);
             // 
-            // note
+            // tableNo
             // 
-            this.note.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.note.ForeColor = System.Drawing.Color.Gray;
-            this.note.Location = new System.Drawing.Point(15, 44);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(274, 21);
-            this.note.TabIndex = 2;
-            this.note.Text = "Reference Note";
-            this.note.Click += new System.EventHandler(this.note_Click);
-            this.note.Leave += new System.EventHandler(this.note_Leave);
+            this.tableNo.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
+            this.tableNo.ForeColor = System.Drawing.Color.Gray;
+            this.tableNo.Location = new System.Drawing.Point(15, 44);
+            this.tableNo.Name = "tableNo";
+            this.tableNo.Size = new System.Drawing.Size(274, 21);
+            this.tableNo.TabIndex = 2;
+            this.tableNo.Text = "Table No";
+            this.tableNo.Click += new System.EventHandler(this.tableNo_Click);
+            this.tableNo.Leave += new System.EventHandler(this.tableNo_Leave);
             // 
             // roomNo
             // 
@@ -369,7 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.menuList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bill)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,28 +343,25 @@
 
         private System.Windows.Forms.DataGridView menuList;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button payment;
+        private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn product;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.TextBox menuName;
-        private System.Windows.Forms.TextBox note;
+        private System.Windows.Forms.TextBox tableNo;
         public System.Windows.Forms.ComboBox roomNo;
+        public System.Windows.Forms.DataGridView bill;
+        public System.Windows.Forms.Label totalPayment;
+        public System.Windows.Forms.Label total;
+        public System.Windows.Forms.Label totalItem;
     }
 }

@@ -26,18 +26,18 @@ namespace proyek_distributed_database_desktop.Restaurant
             m.Show();
         }
 
-        private void listProductsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ListProduct listProduct = new ListProduct();
-            listProduct.MdiParent = this;
-            listProduct.Show();
-        }
-
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
             dashboard.MdiParent = this;
             dashboard.Show();
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListProduct listProduct = new ListProduct();
+            listProduct.MdiParent = this;
+            listProduct.Show();
         }
     }
 }
