@@ -17,7 +17,9 @@ namespace proyek_distributed_database_desktop
     {
         OracleConnection conn;
         Forms forms;
-        public static string connectionString;
+        public static string connectionString, newconnectionString;
+        public static string username_login, password_login;
+        public static string employee_loginid, role_login, database_login, first_name;
         public Login(Forms forms)
         {
             InitializeComponent();
@@ -31,18 +33,42 @@ namespace proyek_distributed_database_desktop
             {
                 var parser = new FileIniDataParser();
                 IniData data = parser.ReadFile("Config.ini");
-                connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
+                //connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
+                connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + data[forms.ToString()]["username"] + ";Password=" + data[forms.ToString()]["password"];
                 conn = new OracleConnection(connectionString);
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
                 {
+                    OracleCommand command = conn.CreateCommand();
+                    if (forms == Forms.FrontOffice)
+                    {
+                        command.CommandText =
+                                "select employee_id, role, database,first_name from employee where username = :username and password = :password";
+                    }
+                    else
+                    {
+                        command.CommandText =
+                                "select employee_id, role, database,first_name from employee@keFrontOffice where username = :username and password = :password";
+                    }
+                    command.Parameters.Add(":username", username_login);
+                    command.Parameters.Add(":password", password_login);
+                    OracleDataReader read = command.ExecuteReader();
+                    if (read.Read())
+                    {
+                        employee_loginid = read.GetString(0);
+                        role_login = read.GetString(1);
+                        database_login = read.GetString(2);
+                        first_name = read.GetString(3);
+                    }
+                    conn.Close();
+                    newconnectionString = "Data source=" + database_login + ";User ID=" + username_login + ";Password=" + password_login;
                     openForms(this.forms);
+                    
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //throw ex;
             }
         }
 
@@ -82,11 +108,10 @@ namespace proyek_distributed_database_desktop
         {
             if (textBox1.Text.Trim().ToLower().Count() != 0 && textBox2.Text.Count() != 0)
             {
-                textBox1.Text = textBox1.Text.Trim();
-                textBox2.Text = textBox2.Text.TrimStart().TrimEnd();
-                createConnection(textBox1.Text, textBox2.Text);
+                username_login = textBox1.Text.Trim();
+                password_login = textBox2.Text.TrimStart().TrimEnd();
+                createConnection(username_login, password_login);
                 //conn.Open();
-
             }
             else
             {

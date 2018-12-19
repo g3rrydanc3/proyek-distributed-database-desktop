@@ -20,7 +20,6 @@ namespace proyek_distributed_database_desktop.FrontOffice
         {
             InitializeComponent();
             conn = new OracleConnection(Login.connectionString);
-
             d = new Dashboard();
             d.MdiParent = this;
             d.FormClosed += new FormClosedEventHandler(d_closed);
@@ -134,7 +133,15 @@ namespace proyek_distributed_database_desktop.FrontOffice
 
         private void Home_Load(object sender, EventArgs e)
         {
-            
+            /*if (Login.username_login == "adminfrontoffice" && Login.password_login == "admin")
+            {
+                Login.employee_loginid = "ADMIN";
+                lblFirstName.Text = "Hello, "+Login.employee_loginid.ToString();
+            }
+            else
+            {
+                lblFirstName.Text = "Hello, " + Login.first_name.ToString();
+            }*/
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
