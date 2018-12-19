@@ -15,10 +15,24 @@ namespace proyek_distributed_database_desktop.FrontOffice
     {
         OracleConnection conn;
         int idx;
+        bool fromReservation;
+        Reservation rs;
         public Guests()
         {
             InitializeComponent();
             conn = new OracleConnection(Login.connectionString);
+        }
+
+        public Guests(bool get, Reservation rs)
+        {
+            InitializeComponent();
+            conn = new OracleConnection(Login.connectionString);
+            fromReservation = get;
+            if (fromReservation)
+            {
+                btnAddReservation.Enabled = true;
+            }
+            rs = this.rs;
         }
 
         private void Guests_Load(object sender, EventArgs e)
@@ -55,7 +69,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             OracleTransaction trans;
             trans = conn.BeginTransaction(IsolationLevel.Serializable);
 
-            //string id = txtID.Text;
+            string id = txtCustomerId.Text;
             string fname = txtFirstName.Text;
             string lname = txtLastName.Text;
             string address = txtAddress.Text;
@@ -66,7 +80,8 @@ namespace proyek_distributed_database_desktop.FrontOffice
                 try
                 {
                     command.CommandText =
-                        "INSERT INTO customer (first_name, last_name, address, phone) values (:fname,:lname,:address,:phone)";
+                        "INSERT INTO customer (customer_id,first_name, last_name, address, phone) values (:id,:fname,:lname,:address,:phone)";
+                    command.Parameters.Add(":id", id);
                     command.Parameters.Add(":fname", fname);
                     command.Parameters.Add(":lname", lname);
                     command.Parameters.Add(":address", address);
@@ -138,6 +153,20 @@ namespace proyek_distributed_database_desktop.FrontOffice
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddReservation_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[idx];
+
+            rs.cbCustomerID.SelectedItem = row.Cells[0].Value.ToString();
+            rs.txtFname.Text = row.Cells[1].Value.ToString();
+            rs.txtLname.Text = row.Cells[2].Value.ToString();
+            rs.rtxtAddress.Text = row.Cells[3].Value.ToString();
+            rs.txtPhone.Text = row.Cells[4].Value.ToString();
+            //Reservation r = new Reservation(fname);
+            //r.Show();
+            //this.Dispose();
         }
     }
 }
