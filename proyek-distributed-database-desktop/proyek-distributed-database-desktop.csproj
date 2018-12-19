@@ -124,6 +124,12 @@
       <DependentUpon>ListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Rupiah.cs" />
+    <Compile Include="TravelAgent\Agent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TravelAgent\Agent.Designer.cs">
+      <DependentUpon>Agent.cs</DependentUpon>
+    </Compile>
     <Compile Include="TravelAgent\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Restaurant\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TravelAgent\Agent.resx">
+      <DependentUpon>Agent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TravelAgent\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

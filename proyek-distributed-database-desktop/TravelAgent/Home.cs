@@ -14,6 +14,7 @@ namespace proyek_distributed_database_desktop.TravelAgent
     {
 		Dashboard f;
 		MainMenu m;
+		Agent a;
         public Home()
         {
             InitializeComponent();
@@ -56,5 +57,13 @@ namespace proyek_distributed_database_desktop.TravelAgent
         {
 
         }
-    }
+
+		private void agentDataToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			a = new Agent();
+			a.Closed += (s, args) => this.Close();
+			this.Dispose();
+			a.Show();
+		}
+	}
 }
