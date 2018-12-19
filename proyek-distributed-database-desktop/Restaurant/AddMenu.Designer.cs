@@ -69,9 +69,19 @@
             // qty
             // 
             this.qty.Location = new System.Drawing.Point(95, 70);
+            this.qty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.qty.Name = "qty";
             this.qty.Size = new System.Drawing.Size(46, 20);
             this.qty.TabIndex = 3;
+            this.qty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -118,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddMenu";
             this.Text = "Add Menu";
+            this.Load += new System.EventHandler(this.AddMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,11 +138,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox menuName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown qty;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label Price;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox menuName;
+        public System.Windows.Forms.NumericUpDown qty;
+        public System.Windows.Forms.Label Price;
     }
 }
