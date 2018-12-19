@@ -15,9 +15,14 @@ namespace proyek_distributed_database_desktop.TravelAgent
 	{
 		OracleConnection conn;
 		public static List<string> isi = new List<string>();
+		public static List<string> roomtype = new List<string>();
+		public static List<string> Cin = new List<string>();
+		public static List<string> Cout = new List<string>();
+		public static List<string> qty = new List<string>();
+		public static List<string> price = new List<string>();
 		//public string[] isi = new string[1000];
 		//public object isi;
-		int ctr = 0;
+		int ctr = 1;
 		public Dashboard()
 		{
 			InitializeComponent();
@@ -26,10 +31,19 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-				listBox1.Items.Add(comboBox1.SelectedItem + " - " +
+			ctr = 0;
+			listBox1.Items.Add(comboBox1.SelectedItem + " - " +
 				dateTimePicker1.Value.ToLongDateString() + " - " +
 				dateTimePicker2.Value.ToLongDateString() + " - " +
-				numericUpDown1.Value.ToString());
+				numericUpDown1.Value.ToString()+ " - " +
+				textBox1.Text);
+			
+			roomtype[ctr] = comboBox1.SelectedItem.ToString();
+			Cin[ctr] = dateTimePicker1.Value.ToLongDateString();
+			Cout[ctr] = dateTimePicker2.Value.ToLongDateString();
+			qty[ctr] = numericUpDown1.Value.ToString();
+			price[ctr] = textBox1.Text;
+
 						
 		}
 

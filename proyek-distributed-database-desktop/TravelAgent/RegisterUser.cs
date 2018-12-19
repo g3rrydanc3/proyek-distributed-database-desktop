@@ -46,6 +46,12 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 			conn.Open();
 			OracleCommand command = new OracleCommand("INSERT INTO CUSTOMER@keFrontOffice(CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + richTextBox1.Text + "', '" + textBox4.Text + "')", conn);
+			for (int i = 0; i < TravelAgent.Dashboard.isi.Count; i++)
+			{
+				OracleCommand command2 = new OracleCommand("INSERT INTO RESERVATION(CUSTOMER_ID, AGENT_ID, CHECK_IN, CHECK_OUT) VALUES('"+textBox1.Text+"','TirtaJaya',"+TravelAgent.Dashboard.Cin[i]+ "','"+ TravelAgent.Dashboard.Cout[i] + "',')", conn);
+				OracleCommand command3 = new OracleCommand("INSERT INTO RESERVATION_DETAIL(RESERVATION_ID, ROOM_TYPE, QTY, PRICE) VALUES((select* from(select RESERVATION_ID from RESERVATIONorder by RESERTAVION_ID desc) where ROWNUM = 1),'"+TravelAgent.Dashboard.roomtype+"','"+TravelAgent.Dashboard.qty+"','"+TravelAgent.Dashboard.price+"')", conn);
+			}
+			
 			int rowsInsert = command.ExecuteNonQuery();
 			conn.Close();
 			if (rowsInsert == 0)
@@ -63,20 +69,7 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			conn.Open();
-			OracleCommand command = new OracleCommand("SELECT * FROM CUSTOMER@keFrontOffice WHERE customer_id = "+textBox1.Text + "')", conn);
-			int rowsInsert = command.ExecuteNonQuery();
-			OracleDataReader isi = command.ExecuteReader();
-			conn.Close();
-			if (rowsInsert == 0)//kalau kembar
-			{
-				textBox1.Text = isi.GetValue(0).ToString();
-				MessageBox.Show("User Sudah Terdaftar");
-			}
-			else
-			{
-				MessageBox.Show("User Belum Terdaftar");
-			}
+			
 		}
 	}
 }

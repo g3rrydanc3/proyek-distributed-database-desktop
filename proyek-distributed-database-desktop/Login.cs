@@ -36,7 +36,6 @@ namespace proyek_distributed_database_desktop
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
                 {
-
                     openForms(this.forms);
                 }
             }
