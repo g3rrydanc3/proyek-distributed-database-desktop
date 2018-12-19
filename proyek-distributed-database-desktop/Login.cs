@@ -1,4 +1,4 @@
-﻿using IniParser;
+using IniParser;
 using IniParser.Model;
 using Oracle.ManagedDataAccess.Client;
 using System;

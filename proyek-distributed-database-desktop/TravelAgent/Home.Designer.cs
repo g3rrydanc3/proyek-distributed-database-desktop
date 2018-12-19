@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agentDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,6 +39,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
+            this.agentDataToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -58,6 +60,13 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // agentDataToolStripMenuItem
+            // 
+            this.agentDataToolStripMenuItem.Name = "agentDataToolStripMenuItem";
+            this.agentDataToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.agentDataToolStripMenuItem.Text = "Agent Data";
+            this.agentDataToolStripMenuItem.Click += new System.EventHandler(this.agentDataToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -83,5 +92,6 @@
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem agentDataToolStripMenuItem;
 	}
 }
