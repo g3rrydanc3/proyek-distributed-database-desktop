@@ -15,7 +15,6 @@ namespace proyek_distributed_database_desktop.Laundry
     public partial class MasterLaundryService : Form
     {
         OracleConnection conn;
-        OracleCommand cmd;
         OracleTransaction trans;
         int id_clicked = -1;
 
@@ -28,12 +27,13 @@ namespace proyek_distributed_database_desktop.Laundry
         {
             conn = new OracleConnection(Login.connectionString);
             conn.Open();
+            reset();
             refresh();
         }
 
         private void refresh()
         {
-            OracleCommand cmd = new OracleCommand("select * from laundry_service", conn);
+            OracleCommand cmd = new OracleCommand("select * from laundry_service order by laundry_service_id", conn);
             OracleDataReader reader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
             dataTable.Load(reader);
@@ -61,6 +61,8 @@ namespace proyek_distributed_database_desktop.Laundry
             resetForm();
             buttonRevert.Enabled = false;
             buttonSave.Enabled = false;
+
+            trans = conn.BeginTransaction(IsolationLevel.ReadCommitted);
         }
         
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -90,17 +92,46 @@ namespace proyek_distributed_database_desktop.Laundry
 
         private void buttonAddEdit_Click(object sender, EventArgs e)
         {
+            if(textBoxServiceType.Text != null) {
+                OracleCommand cmd;
+                cmd = conn.CreateCommand();
+                cmd.Transaction = trans;
 
+                if (id_clicked == -1)
+                {
+                    cmd.CommandText = "insert into laundry_service (service_type, price) VALUES (:a1, :a2)";
+                    cmd.Parameters.Add("a1", textBoxServiceType.Text);
+                    cmd.Parameters.Add("a2", numericUpDownPrice.Value);
+                }
+                else
+                {
+                    cmd.CommandText = "update laundry_service set service_type = :a1, price = :a2 where laundry_service_id = :id";
+                    cmd.Parameters.Add("a1", textBoxServiceType.Text);
+                    cmd.Parameters.Add("a2", numericUpDownPrice.Value);
+                    cmd.Parameters.Add("id", id_clicked);
+                }
+                cmd.ExecuteNonQuery();
+
+                resetForm();
+                buttonRevert.Enabled = true;
+                buttonSave.Enabled = true;
+
+                refresh();
+            }
         }
 
         private void buttonRevert_Click(object sender, EventArgs e)
         {
-
+            trans.Rollback();
+            refresh();
+            reset();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
+            trans.Commit();
+            refresh();
+            reset();
         }
     }
 }
