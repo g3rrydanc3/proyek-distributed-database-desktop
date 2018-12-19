@@ -59,6 +59,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.gbGuest.SuspendLayout();
             this.gbRoom.SuspendLayout();
             this.gbPayment.SuspendLayout();
@@ -190,6 +191,7 @@
             // 
             // gbRoom
             // 
+            this.gbRoom.Controls.Add(this.lblPrice);
             this.gbRoom.Controls.Add(this.dtCheckOut);
             this.gbRoom.Controls.Add(this.dtCheckIn);
             this.gbRoom.Controls.Add(this.label8);
@@ -388,6 +390,15 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Reservation Form";
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(136, 79);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(32, 14);
+            this.lblPrice.TabIndex = 8;
+            this.lblPrice.Text = "Rp ,-";
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,5 +456,6 @@
         public System.Windows.Forms.ComboBox cbCustomerID;
         public System.Windows.Forms.TextBox txtRoomNo;
         public System.Windows.Forms.ComboBox cbRoomType;
+        public System.Windows.Forms.Label lblPrice;
     }
 }
