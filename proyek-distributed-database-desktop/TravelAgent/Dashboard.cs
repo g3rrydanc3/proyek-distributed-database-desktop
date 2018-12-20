@@ -22,7 +22,7 @@ namespace proyek_distributed_database_desktop.TravelAgent
 		public static List<string> price = new List<string>();
 		//public string[] isi = new string[1000];
 		//public object isi;
-		int ctr = 1;
+		//int ctr = 1;
 		public Dashboard()
 		{
 			InitializeComponent();
@@ -31,18 +31,19 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			ctr = 0;
+			//ctr = 0;
+
 			listBox1.Items.Add(comboBox1.SelectedItem + " - " +
-				dateTimePicker1.Value.ToLongDateString() + " - " +
-				dateTimePicker2.Value.ToLongDateString() + " - " +
+				dateTimePicker1.Value.ToShortDateString() + " - " +
+				dateTimePicker2.Value.ToShortDateString() + " - " +
 				numericUpDown1.Value.ToString()+ " - " +
 				textBox1.Text);
 			
-			roomtype[ctr] = comboBox1.SelectedItem.ToString();
-			Cin[ctr] = dateTimePicker1.Value.ToLongDateString();
-			Cout[ctr] = dateTimePicker2.Value.ToLongDateString();
-			qty[ctr] = numericUpDown1.Value.ToString();
-			price[ctr] = textBox1.Text;
+			roomtype.Add(comboBox1.SelectedItem.ToString());
+			Cin.Add(dateTimePicker1.Value.ToShortDateString());
+			Cout.Add(dateTimePicker2.Value.ToShortDateString());
+			qty.Add(numericUpDown1.Value.ToString());
+			price.Add(textBox1.Text);
 
 						
 		}
