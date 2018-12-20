@@ -17,7 +17,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
         public Dashboard()
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.newconnectionString);
+            conn = new OracleConnection(Login.connectionString);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

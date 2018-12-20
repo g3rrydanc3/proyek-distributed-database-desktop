@@ -49,7 +49,7 @@ namespace proyek_distributed_database_desktop
                     else
                     {
                         command.CommandText =
-                                "select employee_id, role, database,first_name from employee@keFrontOffice where username = :username and password = :password";
+                                "select employee_id, role, database,first_name from employee@kefrontoffice where username = :username and password = :password";
                     }
                     command.Parameters.Add(":username", username_login);
                     command.Parameters.Add(":password", password_login);
