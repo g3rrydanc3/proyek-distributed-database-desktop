@@ -42,40 +42,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 14);
+            this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu Name : ";
             // 
             // menuName
             // 
             this.menuName.Enabled = false;
-            this.menuName.Location = new System.Drawing.Point(95, 6);
+            this.menuName.Location = new System.Drawing.Point(127, 7);
+            this.menuName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuName.Name = "menuName";
-            this.menuName.Size = new System.Drawing.Size(294, 20);
+            this.menuName.Size = new System.Drawing.Size(391, 22);
             this.menuName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label2.Location = new System.Drawing.Point(50, 40);
+            this.label2.Location = new System.Drawing.Point(67, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 14);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Price : ";
             // 
             // qty
             // 
-            this.qty.Location = new System.Drawing.Point(95, 70);
+            this.qty.Location = new System.Drawing.Point(127, 86);
+            this.qty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.qty.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.qty.Name = "qty";
-            this.qty.Size = new System.Drawing.Size(46, 20);
+            this.qty.Size = new System.Drawing.Size(61, 22);
             this.qty.TabIndex = 3;
             this.qty.Value = new decimal(new int[] {
             1,
@@ -87,9 +91,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.label3.Location = new System.Drawing.Point(55, 72);
+            this.label3.Location = new System.Drawing.Point(73, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 14);
+            this.label3.Size = new System.Drawing.Size(43, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Qty : ";
             // 
@@ -97,9 +102,10 @@
             // 
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 8.25F);
-            this.Price.Location = new System.Drawing.Point(92, 40);
+            this.Price.Location = new System.Drawing.Point(123, 49);
+            this.Price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(33, 14);
+            this.Price.Size = new System.Drawing.Size(39, 18);
             this.Price.TabIndex = 5;
             this.Price.Text = "Rp. 0";
             // 
@@ -107,9 +113,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(314, 112);
+            this.button1.Location = new System.Drawing.Point(419, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -117,9 +124,10 @@
             // 
             // AddMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.button1;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 143);
+            this.ClientSize = new System.Drawing.Size(535, 176);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.label3);
@@ -127,6 +135,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Menu";
