@@ -17,7 +17,8 @@ namespace proyek_distributed_database_desktop
     {
         OracleConnection conn;
         Forms forms;
-        public static string connectionString, newconnectionString;
+        public static string connectionString;
+        public static string newconnectionString;
         public static string username_login, password_login;
         public static string employee_loginid, role_login, database_login, first_name;
         public Login(Forms forms)
@@ -35,11 +36,11 @@ namespace proyek_distributed_database_desktop
                 IniData data = parser.ReadFile("Config.ini");
                 //connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + username + ";Password=" + password;
                 connectionString = "Data source=" + data[forms.ToString()]["datasource"] + ";User ID=" + data[forms.ToString()]["username"] + ";Password=" + data[forms.ToString()]["password"];
+                database_login = data[forms.ToString()]["datasource"];
                 conn = new OracleConnection(connectionString);
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
-                {
-                    database_login = data[forms.ToString()]["datasource"];
+                {                    
                     OracleCommand command = conn.CreateCommand();
                     if (forms == Forms.FrontOffice)
                     {
@@ -63,7 +64,8 @@ namespace proyek_distributed_database_desktop
                     }
                     newconnectionString = "Data source=" + database_login + ";User ID=" + username_login + ";Password=" + password_login;
                 }
-                conn.Close();
+                //MessageBox.Show(newconnectionString);
+                conn.Dispose();
                 openForms(this.forms);
             }
             catch (Exception ex)

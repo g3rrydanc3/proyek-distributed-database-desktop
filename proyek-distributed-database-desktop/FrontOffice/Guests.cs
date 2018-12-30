@@ -20,13 +20,13 @@ namespace proyek_distributed_database_desktop.FrontOffice
         public Guests()
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.newconnectionString);
+            conn = new OracleConnection(Login.connectionString);
         }
 
         public Guests(bool get, Reservation rs)
         {
             InitializeComponent();
-            conn = new OracleConnection(Login.newconnectionString);
+            conn = new OracleConnection(Login.connectionString);
             fromReservation = get;
             if (fromReservation)
             {
