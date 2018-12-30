@@ -152,15 +152,6 @@ namespace proyek_distributed_database_desktop.FrontOffice
                     OracleParameter dateNow = new OracleParameter();
                     dateNow.OracleDbType = OracleDbType.Date;
                     dateNow.Value = now;
-                    
-                    command.CommandText = 
-                         "INSERT INTO service (room_no, service_type, service_date, total) values (:roomno, :servicetype, :servicedate, :total)";
-                    command.Parameters.Add(":roomno", roomno);
-                    command.Parameters.Add(":servicetype", "front office");
-                    command.Parameters.Add(dateNow);
-                    command.Parameters.Add(":total", Rupiah.ToAngka(lblPrice.Text.ToString()).ToString());
-                    command.ExecuteNonQuery();
-                    trans.Commit();
 
                     command = conn.CreateCommand();
                     trans = conn.BeginTransaction(IsolationLevel.Serializable);
@@ -173,6 +164,15 @@ namespace proyek_distributed_database_desktop.FrontOffice
                     command.ExecuteNonQuery();
                     trans.Commit();
 
+                    command.CommandText = 
+                         "INSERT INTO service (room_no, service_type, service_date, total) values (:roomno, :servicetype, :servicedate, :total)";
+                    command.Parameters.Add(":roomno", roomno);
+                    command.Parameters.Add(":servicetype", "front office");
+                    command.Parameters.Add(dateNow);
+                    command.Parameters.Add(":total", Rupiah.ToAngka(lblPrice.Text.ToString()).ToString());
+                    command.ExecuteNonQuery();
+                    trans.Commit();
+                    
                     command = conn.CreateCommand();
                     trans = conn.BeginTransaction(IsolationLevel.Serializable);
                     command.Transaction = trans;
