@@ -195,7 +195,7 @@ namespace proyek_distributed_database_desktop.Restaurant
                 paymentT = paymentT + (listMenuPrice[i] * listMenuQty[i]);
             }
 
-            paymentT = paymentT + (paymentT * 10 /100ct);
+            paymentT = paymentT + (paymentT * 10 /100);
 
             OracleCommand command = new OracleCommand("INSERT INTO MENU_BILL(EMPLOYEE_ID, ROOM_NO, TABLE_NO, TOTAL, BILL_DATE) VALUES(:a1, :a2, :a3, :a4, :a5)", conn);
             command.Parameters.Add("a1", Login.employee_loginid);

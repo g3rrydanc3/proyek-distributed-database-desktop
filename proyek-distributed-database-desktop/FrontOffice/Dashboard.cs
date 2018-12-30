@@ -32,7 +32,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             DataTable dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
-            conn.Dispose();
+            conn.Close();
         
         }
 
