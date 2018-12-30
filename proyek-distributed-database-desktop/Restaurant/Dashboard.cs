@@ -141,14 +141,40 @@ namespace proyek_distributed_database_desktop.Restaurant
             totalPayment.Text = Rupiah.ToRupiah((subtotal + (subtotal * 10 / 100)));
         }
 
+        private void tableNo_Leave(object sender, EventArgs e)
+        {
+            if (tableNo.Text == "")
+            {
+                tableNo.Text = "Table No";
+                tableNo.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tableNo_Enter(object sender, EventArgs e)
+        {
+            if (tableNo.Text == "Table No")
+            {
+                tableNo.ForeColor = Color.Black;
+                tableNo.Text = "";
+            }
+        }
+
         private void payment_Click(object sender, EventArgs e)
         {
             int tableNoInt = -1;
             if(!Int32.TryParse(tableNo.Text, out tableNoInt)){
                 MessageBox.Show("Table No number only.");
-                throw new Exception();
             }
+            else
+            {
+                String menu_bill_id = insertBill(tableNoInt);
+                insertBillDetail(menu_bill_id);
+                cancel_Click(null, null);
+            }
+        }
 
+        private String insertBill(int tableNoInt)
+        {
             String roomNoString;
             if (roomNo.SelectedItem.ToString() == "walk-in-client")
             {
@@ -166,40 +192,40 @@ namespace proyek_distributed_database_desktop.Restaurant
             dateParam.Value = now;
 
             OracleCommand command = new OracleCommand("INSERT INTO MENU_BILL(EMPLOYEE_ID, ROOM_NO, TABLE_NO, TOTAL, BILL_DATE) VALUES(:a1, :a2, :a3, :a4, :a5)", conn);
-            command.Parameters.Add("a1", "EM001");
+            command.Parameters.Add("a1", Login.employee_loginid);
             command.Parameters.Add("a2", roomNoString);
             command.Parameters.Add("a3", tableNoInt);
             command.Parameters.Add("a4", "0");
             command.Parameters.Add(dateParam);
             int rowsInsert = command.ExecuteNonQuery();
-            conn.Close();
-            if (rowsInsert == 0)
-            {
-                MessageBox.Show("Record not inserted");
-            }
-            else
-            {
+            if (rowsInsert != 0) {
                 MessageBox.Show("Success! Bill has been created");
-                this.Close();
+
+                command.CommandText = "select max(substr(menu_bill_id,7)) from menu_bill";
+                OracleDataReader reader = command.ExecuteReader();
+                conn.Clone();
+                if (reader.Read())
+                {
+                    return now.ToString("ddMMyy") + reader.GetString(0);
+                }
             }
+            throw new Exception("Menu Bill not inserted");
         }
 
-        private void tableNo_Leave(object sender, EventArgs e)
+        private void insertBillDetail(String menu_bill_id)
         {
-            if (tableNo.Text == "")
+            OracleCommand cmd = conn.CreateCommand();
+            for (int i = 0; i < listMenuId.Count; i++)
             {
-                tableNo.Text = "Table No";
-                tableNo.ForeColor = Color.Gray;
+                cmd.Parameters.Clear();
+                cmd.CommandText = "insert into menu_bill_detail (menu_bill_id, menu_id, qty, total) values(:a1, :a2, :a3, :a4)";
+                cmd.Parameters.Add("a1", menu_bill_id);
+                cmd.Parameters.Add("a2", listMenuId[i]);
+                cmd.Parameters.Add("a3", listMenuQty[i]);
+                cmd.Parameters.Add("a4", listMenuPrice[i] * listMenuQty[i]);
+                cmd.ExecuteNonQuery();
             }
-        }
-
-        private void tableNo_Enter(object sender, EventArgs e)
-        {
-            if (tableNo.Text == "Table No")
-            {
-                tableNo.ForeColor = Color.Black;
-                tableNo.Text = "";
-            }
+            conn.Close();
         }
     }
 }

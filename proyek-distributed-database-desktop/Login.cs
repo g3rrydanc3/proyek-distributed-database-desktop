@@ -50,7 +50,7 @@ namespace proyek_distributed_database_desktop
                     else
                     {
                         command.CommandText =
-                                "select employee_id, role, database,first_name from employee@keFrontOffice where username = :username and password = :password";
+                                "select employee_id, role, database,first_name from employee@kefrontoffice where username = :username and password = :password";
                     }
                     command.Parameters.Add(":username", username_login);
                     command.Parameters.Add(":password", password_login);
@@ -123,26 +123,7 @@ namespace proyek_distributed_database_desktop
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if (forms == Forms.FrontOffice)
-            {
-                textBox1.Text = "adminfrontoffice";
-                textBox2.Text = "admin";
-            }
-            else if (forms == Forms.Laundry)
-            {
-                textBox1.Text = "adminlaundry";
-                textBox2.Text = "admin";
-            }
-            else if (forms == Forms.Restaurant)
-            {
-                textBox1.Text = "adminrestaurant";
-                textBox2.Text = "admin";
-            }
-            else if (forms == Forms.TravelAgent)
-            {
-                textBox1.Text = "admintravelagent";
-                textBox2.Text = "admin";
-            }
+
         }
     }
 }

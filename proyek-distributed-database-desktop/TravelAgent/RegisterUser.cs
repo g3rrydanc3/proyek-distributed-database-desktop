@@ -28,7 +28,6 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void RegisterUser_Load(object sender, EventArgs e)
 		{
-			//TravelAgent.Dashboard d = new TravelAgent.Dashboard();
 			for (int i = 0; i < TravelAgent.Dashboard.isi.Count; i++)
 			{
 				listBox1.Items.Add(TravelAgent.Dashboard.isi[i]);
@@ -37,23 +36,13 @@ namespace proyek_distributed_database_desktop.TravelAgent
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			
-			string nik = textBox1.Text;
-			string fn = textBox2.Text;
-			string ln = textBox3.Text;
-			string add = richTextBox1.Text;
-			string telp = textBox4.Text;
 
 			conn.Open();
 			OracleCommand command = new OracleCommand("INSERT INTO CUSTOMER@keFrontOffice(CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS, PHONE) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + richTextBox1.Text + "', '" + textBox4.Text + "')", conn);
-			for (int i = 0; i < TravelAgent.Dashboard.isi.Count; i++)
-			{
-				OracleCommand command2 = new OracleCommand("INSERT INTO RESERVATION(CUSTOMER_ID, AGENT_ID, CHECK_IN, CHECK_OUT) VALUES('"+textBox1.Text+"','TirtaJaya',"+TravelAgent.Dashboard.Cin[i]+ "','"+ TravelAgent.Dashboard.Cout[i] + "',')", conn);
-				OracleCommand command3 = new OracleCommand("INSERT INTO RESERVATION_DETAIL(RESERVATION_ID, ROOM_TYPE, QTY, PRICE) VALUES((select* from(select RESERVATION_ID from RESERVATIONorder by RESERTAVION_ID desc) where ROWNUM = 1),'"+TravelAgent.Dashboard.roomtype+"','"+TravelAgent.Dashboard.qty+"','"+TravelAgent.Dashboard.price+"')", conn);
-			}
 			
 			int rowsInsert = command.ExecuteNonQuery();
-			conn.Close();
+			conn.Close();	
+
 			if (rowsInsert == 0)
 			{
 				MessageBox.Show("Record not inserted");
@@ -64,7 +53,60 @@ namespace proyek_distributed_database_desktop.TravelAgent
 				this.Close();
 			}
 
+			void_reserv();
+			void_rdetail();
 
+		}
+
+		private void void_rdetail()
+		{
+
+			int rowsInsert = 0;
+			for (int i = 0; i<TravelAgent.Dashboard.roomtype.Count; i++)
+			{
+				conn.Open();
+				OracleCommand command = new OracleCommand("INSERT INTO RESERVATION_DETAIL(RESERVATION_ID, ROOM_TYPE, QTY, PRICE) VALUES((select* from(select RESERVATION_ID from RESERVATIONorder by RESERTAVION_ID desc) where ROWNUM = 1),'" + TravelAgent.Dashboard.roomtype + "','" + TravelAgent.Dashboard.qty + "','" + TravelAgent.Dashboard.price + "')", conn);
+				rowsInsert = command.ExecuteNonQuery();
+
+				conn.Close();
+			}
+
+			
+
+			if (rowsInsert == 0)
+			{
+				MessageBox.Show("Record not inserted");
+			}
+			else
+			{
+				MessageBox.Show("Success! User has been created");
+				this.Close();
+			}
+		}
+
+		private void void_reserv()
+		{
+			conn.Open();
+			int rowsInsert =0;
+			
+			for (int i = 0; i < TravelAgent.Dashboard.roomtype.Count; i++)
+			{
+				OracleCommand command = new OracleCommand("INSERT INTO RESERVATION(CUSTOMER_ID, AGENT_ID, CHECK_IN, CHECK_OUT) VALUES('" + textBox1.Text + "','TirtaJaya','todate('" + TravelAgent.Dashboard.Cin[i] + "', 'yyyy/mm/dd')','todate('" + TravelAgent.Dashboard.Cout[i] + "', 'yyyy/mm/dd')')", conn);
+				rowsInsert = command.ExecuteNonQuery();
+			}
+
+			
+			conn.Close();
+
+			if (rowsInsert == 0)
+			{
+				MessageBox.Show("Record not inserted");
+			}
+			else
+			{
+				MessageBox.Show("Success! User has been created");
+				this.Close();
+			}
 		}
 
 		private void button3_Click(object sender, EventArgs e)
