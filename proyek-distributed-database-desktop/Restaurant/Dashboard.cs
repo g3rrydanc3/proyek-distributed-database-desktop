@@ -21,7 +21,7 @@ namespace proyek_distributed_database_desktop.Restaurant
         public static List<int> listMenuQty = new List<int>();
         public static List<int> listMenuPrice = new List<int>();
         int index = -1;
-
+        int paymentT = 0;
         private class Item
         {
             public string Name;
@@ -190,12 +190,18 @@ namespace proyek_distributed_database_desktop.Restaurant
             OracleParameter dateParam = new OracleParameter();
             dateParam.OracleDbType = OracleDbType.Date;
             dateParam.Value = now;
+            for (int i = 0; i < listMenuPrice.Count; i++)
+            {
+                paymentT = paymentT + (listMenuPrice[i] * listMenuQty[i]);
+            }
+
+            paymentT = paymentT + (paymentT * 10 /100ct);
 
             OracleCommand command = new OracleCommand("INSERT INTO MENU_BILL(EMPLOYEE_ID, ROOM_NO, TABLE_NO, TOTAL, BILL_DATE) VALUES(:a1, :a2, :a3, :a4, :a5)", conn);
             command.Parameters.Add("a1", Login.employee_loginid);
             command.Parameters.Add("a2", roomNoString);
             command.Parameters.Add("a3", tableNoInt);
-            command.Parameters.Add("a4", "0");
+            command.Parameters.Add("a4", paymentT);
             command.Parameters.Add(dateParam);
             int rowsInsert = command.ExecuteNonQuery();
             if (rowsInsert != 0) {
