@@ -19,10 +19,10 @@ namespace proyek_distributed_database_desktop.FrontOffice
         {
             InitializeComponent();
             //conn = new OracleConnection(Login.newconnectionString);
-            d = new Dashboard();
-            d.MdiParent = this;
-            d.FormClosed += new FormClosedEventHandler(d_closed);
-            d.Show();
+            //d = new Dashboard();
+            //d.MdiParent = this;
+            //d.FormClosed += new FormClosedEventHandler(d_closed);
+            //d.Show();
             
         }
         Guests g;
@@ -116,7 +116,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             {
                 d = new Dashboard();
                 d.MdiParent = this;
-                d.FormClosed += new FormClosedEventHandler(em_closed);
+                d.FormClosed += new FormClosedEventHandler(d_closed);
                 d.Show();
             }
             else
@@ -139,6 +139,7 @@ namespace proyek_distributed_database_desktop.FrontOffice
             }
             else
             {
+                //menuStrip1.Items.RemoveAt(2);
                 lblFirstName.Text = "Hello, " + Login.first_name.ToString();
             }
         }

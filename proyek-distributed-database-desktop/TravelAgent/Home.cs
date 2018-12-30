@@ -61,7 +61,6 @@ namespace proyek_distributed_database_desktop.TravelAgent
 		private void agentDataToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			a = new Agent();
-			a.Closed += (s, args) => this.Close();
 			a.Show();
 		}
 	}
